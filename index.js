@@ -9,16 +9,15 @@ function bumpCounter(){
 	};
 };
 
-function createAnimal(){
-	function sharkCreator(deadlyDevice){
+function createAnimal(animalType){
+	return (deadlyDevice)=>{
 		return{
-			'animalType': 'Shark',
-			'deadlyDevice': deadlyDevice
+			'animalType':animalType,
+			'deadlyDevice':deadlyDevice
 		};
 	};
-	return sharkCreator;
 }
 
-let sharkCreator = createAnimal();
+let sharkCreator = createAnimal('Shark');
 let sharkWithFrickinLaserbeam = sharkCreator('Laserbeam');
 let sharkWithFrickinCannon = sharkCreator('Cannon');
